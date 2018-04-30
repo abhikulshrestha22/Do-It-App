@@ -1,23 +1,40 @@
 import React from 'react';
+import {Grid,Row,Col,Button,InputGroup,FormControl,FormGroup,Form} from 'react-bootstrap';
 
 const AddGoalsComponent = ({onSubmit})=>{
     let textInput= React.createRef();
 
     let handleSubmit=(event)=>{
+        console.log("in handle submit");
         event.preventDefault();
-        //console.log(textInput.current.value);
+        console.log(textInput.current.value);
         onSubmit(textInput.current.value);
     }
     return (
         
-        <div>
-            <form onSubmit={
+        <Row>
+        <Col  xs={12} md={10} mdOffset={1} >
+
+            <Form className="addGoalForm" inline onSubmit={
                 handleSubmit
             } >
-                <input ref={textInput} type="text" name="text"/>
-                <button type="submit"> Add Goal </button>
-            </form>
-        </div>
+                <FormGroup className="addGoalForm">
+                    <InputGroup className="inputGroup1">
+                        <FormControl inputRef={textInput} type="text"/>
+                        
+                    </InputGroup>
+                    <Button bsStyle="primary" type="submit"> Add Goal </Button>
+                    
+                </FormGroup>
+
+
+
+            </Form>
+
+        </Col>
+        </Row>
+        
+        
     )
 }
 
