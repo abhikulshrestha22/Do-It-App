@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {addGoalAction} from '../actions';
 
-import AddGoalsComponent from '../components/addGoals.component';
+import AddGoalsComponent from './addGoals.component';
 
 
 const mapDispatchToProps = (dispatch)=>{

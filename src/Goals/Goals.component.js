@@ -1,7 +1,7 @@
 import React from 'react';
 import {Col} from 'react-bootstrap';
-import AddGoalsContainer from '../containers/addGoals.container';
-import GoalsListContainer from '../containers/GoalsList.Container';
+import AddGoalsContainer from './addGoals.container';
+import GoalsListContainer from './GoalsList.Container';
 
 
 const GoalsComponent = ()=>(

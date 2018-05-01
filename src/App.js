@@ -5,8 +5,8 @@ import {Grid,Row} from 'react-bootstrap';
 import logo from './logo.svg';
 import './App.css';
 
-import NavigationPanel from './components/NavigationPanel.Component';
-import BoardComponent from './components/Board.Component';
+import NavigationPanel from './NavigationPanel/NavigationPanel.Component';
+import BoardComponent from './Board/Board.Component';
 class App extends Component {
   render() {
     return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import GoalsListComponent from '../components/GoalsList.Component.js';
+import GoalsListComponent from './GoalsList.Component.js';
 
 const mapStateToProps = (state)=>{
     console.log("in goalslist")

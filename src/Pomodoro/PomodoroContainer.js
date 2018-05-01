@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {tickAction} from '../actions';
-import PomodoroComponent from '../components/PomodoroComponent.js';
+import PomodoroComponent from './PomodoroComponent.js';
 
 const mapStateToProps = (state)=>{
     console.log("state is coming");
