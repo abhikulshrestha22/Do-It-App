@@ -1,8 +1,17 @@
- const addGoalAction =(text)=>{
+ export const addGoalAction =(text)=>{
     return {
         type:'ADD_GOAL',
         text
     }
 }
 
-export default addGoalAction;
+export const tickAction = (interval)=>{
+    console.log("tick");
+
+    return{
+        type:'TICK',
+        interval
+    }
+}
+
+//export default addGoalAction;

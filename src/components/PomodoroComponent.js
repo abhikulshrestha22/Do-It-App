@@ -1,7 +1,9 @@
 import React from 'react';
-
-const PomodoroComponent = (state)=>{
-
+import {Row,Col,Button,FormControl,FormGroup} from 'react-bootstrap';
+const PomodoroComponent = ({goals,generateTick,tick})=>{
+//    const PomodoroComponent = (e)=>{
+        //console.log("here comes the e")
+        //console.log(e);
     let pomodoroGoal;
 
     const handleChange=(event)=>{
@@ -9,25 +11,45 @@ const PomodoroComponent = (state)=>{
     }
 
     const startPomodoro = ()=>{
-        console.log(pomodoroGoal + "started");
-        setTimeout(()=>{
-            console.log("stopped")
-        },4000);
+        //console.log(pomodoroGoal + "started");
+        //console.log(tick);
+        generateTick:generateTick(20);
     }
+
+    // return (
+    //     <FormGroup componentClass="select">
+    //         <FormControl>
+    //         <option key={-1}></option>
+    //         {state.goals.map((goal,index)=>(
+    //                         <option key={index}>{goal.text}</option>
+    //                     ))}
+    //     </FormControl>
+    //     </FormGroup>
+        
+
+    // )
 
     
     return (
-        <div>
-            <select value={pomodoroGoal} onChange={handleChange}>
+        <Row>
+            <Col xs={12} md={10} mdOffset={1}>
+            <div className="divForPadding">
+                <select className="selectGoal" value={pomodoroGoal} onChange={handleChange}>
                 <option key={-1}></option>
-                {state.goals.map((goal,index)=>(
+                {goals.map((goal,index)=>(
                     <option key={index}>{goal.text}</option>
                 ))}
 
-            </select>
+                </select>
+        
+                <Button bsStyle="success" onClick={startPomodoro}>Start pomodoro</Button>
+
+
+                <h1>{tick}</h1>
+            </div>
             
-            <button onClick={startPomodoro}>Start pomodoro</button>
-        </div>
+            </Col>
+        </Row>
         
     )
 }

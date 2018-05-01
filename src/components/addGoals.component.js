@@ -1,5 +1,5 @@
 import React from 'react';
-import {Grid,Row,Col,Button,InputGroup,FormControl,FormGroup,Form} from 'react-bootstrap';
+import {Row,Col,Button,InputGroup,FormControl,FormGroup,Form} from 'react-bootstrap';
 
 const AddGoalsComponent = ({onSubmit})=>{
     let textInput= React.createRef();

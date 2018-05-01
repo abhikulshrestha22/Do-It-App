@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import addGoalAction from '../actions';
+import {addGoalAction} from '../actions';
 
 import AddGoalsComponent from '../components/addGoals.component';
 
