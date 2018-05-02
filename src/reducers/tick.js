@@ -3,11 +3,15 @@
 
 const tick = (state=0,action)=>{
     switch(action.type){
+        //To decrease the timer
         case 'TICK':
-            //let tickCounter=state
-            //console.log("here comes state");
-            //console.log(tickCounter)
-            return state + 1;
+            
+            return state - 1;
+        //To set the interval of timer initially
+        case 'SET_INTERVAL':
+            return state+action.seconds;
+        case 'STOP_TICK':
+            return 0;
         default:
             return state;
     }

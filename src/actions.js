@@ -14,4 +14,18 @@ export const tickAction = (interval)=>{
     }
 }
 
-//export default addGoalAction;
+export const setIntervalValueAction = (seconds)=>{
+    return{
+        type:'SET_INTERVAL',
+        seconds
+    }
+}
+
+export const stopTickAction = ()=>{
+
+    return{
+        type:'STOP_TICK',
+        
+    }
+}
+

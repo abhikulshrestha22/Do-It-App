@@ -1,6 +1,6 @@
 import React from 'react';
 import {Row,Col,Button,FormControl,FormGroup} from 'react-bootstrap';
-const PomodoroComponent = ({goals,generateTick,tick})=>{
+const PomodoroComponent = ({goals,actions,tick})=>{
 //    const PomodoroComponent = (e)=>{
         //console.log("here comes the e")
         //console.log(e);
@@ -11,23 +11,24 @@ const PomodoroComponent = ({goals,generateTick,tick})=>{
     }
 
     const startPomodoro = ()=>{
-        //console.log(pomodoroGoal + "started");
-        //console.log(tick);
-        generateTick:generateTick(20);
+        setIntervalValue:actions.setIntervalValue(40);
+        generateTick:actions.generateTick(20);
     }
 
-    // return (
-    //     <FormGroup componentClass="select">
-    //         <FormControl>
-    //         <option key={-1}></option>
-    //         {state.goals.map((goal,index)=>(
-    //                         <option key={index}>{goal.text}</option>
-    //                     ))}
-    //     </FormControl>
-    //     </FormGroup>
-        
+    //to convert seconds into hh:mm:ss format
+    const convertSecondsToHourMin=(seconds)=>{
+        if(seconds===0){
+            actions.stopTick();
+        }
+        const hour = formattedNumber( Math.floor(seconds/3600));
+        const min = formattedNumber(Math.floor(seconds/60) - hour*60);
+        const sec = formattedNumber(seconds-min*60);
+        return hour + ':' + min + ':' + sec
+    }
 
-    // )
+    const formattedNumber = (number)=>{
+        return ('0' + number).slice(-2);
+    }
 
     
     return (
@@ -45,7 +46,7 @@ const PomodoroComponent = ({goals,generateTick,tick})=>{
                 <Button bsStyle="success" onClick={startPomodoro}>Start pomodoro</Button>
 
 
-                <h1>{tick}</h1>
+                <h1>{convertSecondsToHourMin(tick)}</h1>
             </div>
             
             </Col>
