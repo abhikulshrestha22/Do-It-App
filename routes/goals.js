@@ -5,6 +5,7 @@ var router = express.Router();
 
 
 router.get('/getgoals',(req,res)=>{
+    console.log("get goals request")
     GoalModel.find({},function(err,goals){
         if(err){
             res.send({
